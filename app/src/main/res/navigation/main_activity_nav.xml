@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/yemekDetayFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.YemekDetayFragment"
+        android:label="YemekDetayFragment"
+        tools:layout="@layout/fragment_yemek_detay">
+        <argument
+            android:name="yemek"
+            app:argType="com.beyzanuraydemir.foodorderingapp.data.entity.Yemekler" />
+        <action
+            android:id="@+id/sepeteGecis"
+            app:destination="@id/sepetFragment" />
+        <action
+            android:id="@+id/detaydanYemekListeyeGecis"
+            app:destination="@id/yemekListeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yemekListeFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.YemekListeFragment"
+        android:label="YemekListeFragment"
+        tools:layout="@layout/fragment_yemek_liste">
+        <action
+            android:id="@+id/yemekDetayGecis"
+            app:destination="@id/yemekDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <action
+            android:id="@+id/sepet_odeme_gecis"
+            app:destination="@id/odemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderSuccessFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.OrderSuccessFragment"
+        android:label="fragment_order_success"
+        tools:layout="@layout/fragment_order_success" />
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/anaSayfa_yemekListe_Gecis"
+            app:destination="@id/yemekListeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/odemeFragment"
+        android:name="com.beyzanuraydemir.foodorderingapp.ui.fragment.OdemeFragment"
+        android:label="OdemeFragment"
+        tools:layout="@layout/fragment_odeme">
+        <action
+            android:id="@+id/odeme_odersuccesss_gecis"
+            app:destination="@id/orderSuccessFragment" />
+    </fragment>
+</navigation>

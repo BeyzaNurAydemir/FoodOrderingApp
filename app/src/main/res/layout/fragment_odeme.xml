@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.OdemeFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOdeme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/backButtonOdeme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/geri_resim" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Güvenli Ödeme"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="20dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="288dp"
+            android:text="Kart Bilgileri:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarOdeme" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_cardholder_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_cardholder_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Kart Sahibi"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_cardholder_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_credit_card_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:contentPadding="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/cv_cardholder_name"
+            app:layout_constraintStart_toStartOf="@+id/cv_cardholder_name"
+            app:layout_constraintTop_toBottomOf="@+id/cv_cardholder_name">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_credit_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Kart Numarası:"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_credit_card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789- "
+                    android:inputType="number"
+                    android:maxLength="25"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_expire_on_month"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:contentPadding="2dp"
+            app:layout_constraintStart_toStartOf="@+id/cv_cardholder_name"
+            app:layout_constraintTop_toBottomOf="@+id/cv_credit_card_number">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_expire_on_month"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Ay"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/act_expire_on_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:dropDownHeight="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_expire_on_year"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:contentPadding="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_expire_on_month"
+            app:layout_constraintStart_toEndOf="@id/cv_expire_on_month"
+            app:layout_constraintTop_toTopOf="@+id/cv_expire_on_month">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_expire_on_year"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Yıl"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/act_expire_on_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:dropDownHeight="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_cvc_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:contentPadding="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/cv_expire_on_month"
+            app:layout_constraintStart_toStartOf="@+id/cv_cardholder_name"
+            app:layout_constraintTop_toBottomOf="@+id/cv_expire_on_month">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_cvc_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Güvenlik Kodu"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_cvc_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789- "
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Adres Bilgisi:"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/cv_cvc_code" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_address"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:contentPadding="2dp"
+            app:layout_constraintBottom_toTopOf="@id/btnAlisverisTamamla"
+            app:layout_constraintEnd_toEndOf="@+id/cv_cardholder_name"
+            app:layout_constraintStart_toStartOf="@+id/cv_cardholder_name"
+            app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Adres:"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorTextColor="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btnAlisverisTamamla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="16dp"
+            android:text="Onayla ve Bitir"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
